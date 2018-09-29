@@ -20,6 +20,10 @@ class RestaurantsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     var restaurantNames = ["Cafe Deadend", "Homei", "Teakha", "Cafe Loisl", "Petite Oyster",
                            "For Kee Restaurant", "Po's Atelier", "Bourke Street Bakery", "Haigh's Chocolate", "Palomino Espresso",
                            "Upstate", "Traif", "Graham Avenue Meats", "Waffle & Wolf", "Five Leaves", "Cafe Lore", "Confessional",
@@ -43,12 +47,12 @@ class RestaurantsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellId = "Cell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! RestaurantTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = restaurantNames[indexPath.row]
-        cell.imageView?.image = UIImage(named: restaurantImages[indexPath.row])
-
+        cell.nameLabel?.text = restaurantNames[indexPath.row]
+        cell.thumbnailImageView?.image = UIImage(named: restaurantImages[indexPath.row])
+        
         return cell
     }
 

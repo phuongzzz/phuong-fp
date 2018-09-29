@@ -12,6 +12,7 @@
 		F380EBAC215FB3420016216E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F380EBAB215FB3420016216E /* Assets.xcassets */; };
 		F380EBAF215FB3420016216E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F380EBAD215FB3420016216E /* LaunchScreen.storyboard */; };
 		F380EBB7215FB3C50016216E /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */; };
+		F380EBB9215FBE5E0016216E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380EBB8215FBE5E0016216E /* RestaurantTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F380EBAE215FB3420016216E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F380EBB0215FB3420016216E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
+		F380EBB8215FBE5E0016216E /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F380EBAD215FB3420016216E /* LaunchScreen.storyboard */,
 				F380EBB0215FB3420016216E /* Info.plist */,
 				F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */,
+				F380EBB8215FBE5E0016216E /* RestaurantTableViewCell.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F380EBB7215FB3C50016216E /* RestaurantsTableViewController.swift in Sources */,
+				F380EBB9215FBE5E0016216E /* RestaurantTableViewCell.swift in Sources */,
 				F380EBA5215FB3410016216E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
