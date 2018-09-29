@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		F380EBA5215FB3410016216E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380EBA4215FB3410016216E /* AppDelegate.swift */; };
-		F380EBA7215FB3410016216E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380EBA6215FB3410016216E /* ViewController.swift */; };
 		F380EBAA215FB3410016216E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F380EBA8215FB3410016216E /* Main.storyboard */; };
 		F380EBAC215FB3420016216E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F380EBAB215FB3420016216E /* Assets.xcassets */; };
 		F380EBAF215FB3420016216E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F380EBAD215FB3420016216E /* LaunchScreen.storyboard */; };
+		F380EBB7215FB3C50016216E /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F380EBA1215FB3410016216E /* FoodPin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodPin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F380EBA4215FB3410016216E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F380EBA6215FB3410016216E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F380EBA9215FB3410016216E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F380EBAB215FB3420016216E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F380EBAE215FB3420016216E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F380EBB0215FB3420016216E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +55,11 @@
 			isa = PBXGroup;
 			children = (
 				F380EBA4215FB3410016216E /* AppDelegate.swift */,
-				F380EBA6215FB3410016216E /* ViewController.swift */,
 				F380EBA8215FB3410016216E /* Main.storyboard */,
 				F380EBAB215FB3420016216E /* Assets.xcassets */,
 				F380EBAD215FB3420016216E /* LaunchScreen.storyboard */,
 				F380EBB0215FB3420016216E /* Info.plist */,
+				F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -135,7 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F380EBA7215FB3410016216E /* ViewController.swift in Sources */,
+				F380EBB7215FB3C50016216E /* RestaurantsTableViewController.swift in Sources */,
 				F380EBA5215FB3410016216E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
