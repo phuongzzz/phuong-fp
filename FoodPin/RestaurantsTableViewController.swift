@@ -32,7 +32,7 @@ class RestaurantsTableViewController: UITableViewController {
                             "posatelier.jpg", "bourkestreetbakery.jpg", "haighschocolate.jpg", "palominoespresso.jpg", "upstate.jpg",
                             "traif.jpg", "grahamavenuemeats.jpg", "wafflewolf.jpg", "fiveleaves.jpg", "cafelore.jpg", "confessional.jpg",
                             "barrafina.jpg", "donostia.jpg", "royaloak.jpg", "caskpubkitchen.jpg"]
-
+    var restaurantIsVisited = Array(repeating: false, count: 21)
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -53,7 +53,47 @@ class RestaurantsTableViewController: UITableViewController {
         cell.nameLabel?.text = restaurantNames[indexPath.row]
         cell.thumbnailImageView?.image = UIImage(named: restaurantImages[indexPath.row])
         
+        cell.accessoryType = restaurantIsVisited[indexPath.row] ? .checkmark : .none
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // adding option menu as an action sheet:
+        let optionMenu = UIAlertController(title: "Select action to perform", message: nil, preferredStyle: .actionSheet)
+        
+        // adding action to the sheet
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        let callActionHandler = { (action: UIAlertAction!) -> Void in
+            let errorMessage = UIAlertController(title: "Can not make the call", message: "Service unavailable", preferredStyle: .alert)
+            let cancelCallAction = UIAlertAction(title: "Cancel Call", style: .cancel, handler: nil)
+            errorMessage.addAction(cancelCallAction)
+            self.present(errorMessage, animated: true)
+        }
+        
+        let callAction = UIAlertAction(title: "Call the restaurant", style: .default, handler: callActionHandler)
+        
+        let checkInAction = UIAlertAction(title: "Check in", style: .default, handler:
+        {
+            (action: UIAlertAction!) -> Void  in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .checkmark
+            self.restaurantIsVisited[indexPath.row] = true
+        })
+        
+        let uncheckInAction = UIAlertAction(title: "Uncheckin", style: .default, handler:
+        {
+            (action: UIAlertAction!) -> Void in
+            let cell = tableView.cellForRow(at: indexPath)
+            cell?.accessoryType = .none
+            self.restaurantIsVisited[indexPath.row] = false
+        })
+        // add action to the menu
+        optionMenu.addAction(cancelAction)
+        optionMenu.addAction(callAction)
+        restaurantIsVisited[indexPath.row] ? optionMenu.addAction(uncheckInAction) : optionMenu.addAction(checkInAction)
+        present(optionMenu, animated: true)
     }
 
     /*
