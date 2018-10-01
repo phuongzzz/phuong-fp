@@ -58,6 +58,7 @@ class RestaurantsTableViewController: UITableViewController {
         return cell
     }
     
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // adding option menu as an action sheet:
         let optionMenu = UIAlertController(title: "Select action to perform", message: nil, preferredStyle: .actionSheet)
@@ -95,6 +96,7 @@ class RestaurantsTableViewController: UITableViewController {
         restaurantIsVisited[indexPath.row] ? optionMenu.addAction(uncheckInAction) : optionMenu.addAction(checkInAction)
         present(optionMenu, animated: true)
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -141,6 +143,15 @@ class RestaurantsTableViewController: UITableViewController {
         })
         shareAction.backgroundColor = UIColor(red: 48.0/255.0, green: 173/255.0, blue: 99/255.0, alpha: 1.0)
         return [deleteAction, shareAction]
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showRestaurantDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let destinationController = segue.destination as! RestaurantDetailViewController
+                destinationController.restaurantImage = restaurantImages[indexPath.row]
+            }
+        }
     }
 
     /*
