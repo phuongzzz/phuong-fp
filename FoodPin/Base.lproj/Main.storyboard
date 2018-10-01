@@ -104,18 +104,46 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="96e-g7-Mdg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjs-bk-ppZ">
+                                <rect key="frame" x="37.5" y="108.5" width="300" height="450"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Qpd-Z4-84I"/>
+                                    <constraint firstAttribute="height" constant="450" id="QrM-oj-SPQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBound" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHt-3y-RSq">
+                                <rect key="frame" x="117.5" y="299.5" width="140" height="68.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="ucQ-E1-OAG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="zjs-bk-ppZ" firstAttribute="centerX" secondItem="rpf-tF-M6Z" secondAttribute="centerX" id="7mY-9Q-Z7R"/>
                             <constraint firstItem="96e-g7-Mdg" firstAttribute="trailing" secondItem="FhP-0q-2mv" secondAttribute="trailing" id="DsY-8U-XfQ"/>
                             <constraint firstItem="96e-g7-Mdg" firstAttribute="bottom" secondItem="rpf-tF-M6Z" secondAttribute="bottom" id="FTD-vk-R0Z"/>
+                            <constraint firstItem="zjs-bk-ppZ" firstAttribute="centerY" secondItem="rpf-tF-M6Z" secondAttribute="centerY" id="Gi5-iN-wsz"/>
                             <constraint firstItem="96e-g7-Mdg" firstAttribute="leading" secondItem="FhP-0q-2mv" secondAttribute="leading" id="LEx-Pq-boF"/>
+                            <constraint firstItem="QHt-3y-RSq" firstAttribute="centerY" secondItem="rpf-tF-M6Z" secondAttribute="centerY" id="Ms2-dS-UPz"/>
                             <constraint firstItem="96e-g7-Mdg" firstAttribute="top" secondItem="rpf-tF-M6Z" secondAttribute="top" id="ae3-Qi-AjV"/>
+                            <constraint firstItem="QHt-3y-RSq" firstAttribute="centerX" secondItem="rpf-tF-M6Z" secondAttribute="centerX" id="s1Q-Tg-v2h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FhP-0q-2mv"/>
                     </view>
                     <connections>
                         <outlet property="restaurantImageView" destination="96e-g7-Mdg" id="OcL-ST-3EJ"/>
+                        <outlet property="restaurantNameLabel" destination="QHt-3y-RSq" id="2yL-XS-qfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H73-8Q-YTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
