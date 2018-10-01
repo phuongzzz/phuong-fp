@@ -18,6 +18,6 @@ class RestaurantDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         restaurantImageView.image = UIImage(named: restaurantImage)
-        restaurantNameLabel.text = restaurantName
+//        restaurantNameLabel.text = restaurantName
     }
 }
