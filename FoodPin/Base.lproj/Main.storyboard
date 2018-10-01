@@ -109,15 +109,50 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="LR1-HO-reL">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="LR1-HO-reL" customClass="RestaurantDetailTableViewCell" customModule="FoodPin" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="328" width="414" height="36"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LR1-HO-reL" id="5sm-bL-SMm">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="35.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="WBV-P2-sJn">
+                                                    <rect key="frame" x="10" y="6.3333333333333339" width="404" height="23.333333333333329"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Field" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFP-7x-crt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="113.66666666666667" height="23.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1O-Yb-EFO">
+                                                            <rect key="frame" x="176.66666666666663" y="0.0" width="227.33333333333337" height="23.333333333333332"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="xFP-7x-crt" firstAttribute="width" secondItem="m1O-Yb-EFO" secondAttribute="width" multiplier="0.5" id="L4L-lk-ufI"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="WBV-P2-sJn" secondAttribute="trailing" id="0C5-gc-kOK"/>
+                                                <constraint firstItem="WBV-P2-sJn" firstAttribute="leading" secondItem="5sm-bL-SMm" secondAttribute="leading" constant="10" id="FRM-dJ-KJ8"/>
+                                                <constraint firstItem="WBV-P2-sJn" firstAttribute="centerY" secondItem="5sm-bL-SMm" secondAttribute="centerY" id="dwO-1x-Aot"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="fieldLabel" destination="xFP-7x-crt" id="3u8-Qn-n25"/>
+                                            <outlet property="valueLabel" destination="m1O-Yb-EFO" id="I4a-Qc-0Sa"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="FM4-KN-afH" id="rXi-2a-1Bn"/>
+                                    <outlet property="delegate" destination="FM4-KN-afH" id="qn7-tM-U9e"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

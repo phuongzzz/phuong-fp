@@ -25,7 +25,7 @@ class RestaurantsTableViewController: UITableViewController {
     }
     var restaurants: [Restaurant] = [
         Restaurant(name: "Cafe Deadend", type: "Cafe", location: "Ha Noi", image: "cafedeadend.jpg", isVisited: false),
-        Restaurant(name: "Homei", type: "Bakery", location: "Paris", image: "homei.jpg", isVisited: false),
+        Restaurant(name: "Homei", type: "Bakery", location: "Paris", image: "homei.jpg", isVisited: true),
         Restaurant(name: "Teakha", type: "Caferita", location: "Bankok", image: "teakha.jpg", isVisited: false),
         Restaurant(name: "Cafe Loisl", type: "Cafe", location: "Sydney", image: "cafeloisl.jpg", isVisited: false),
         Restaurant(name: "Petite Oyster", type: "Restaurant", location: "Lodon", image: "petiteoyster.jpg", isVisited: false),
@@ -160,8 +160,7 @@ class RestaurantsTableViewController: UITableViewController {
         if segue.identifier == "showRestaurantDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let destinationController = segue.destination as! RestaurantDetailViewController
-                destinationController.restaurantImage = restaurants[indexPath.row].image
-                destinationController.restaurantName = restaurants[indexPath.row].name
+                destinationController.restaurant = restaurants[indexPath.row]
             }
         }
     }
