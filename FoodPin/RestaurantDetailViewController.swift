@@ -10,6 +10,8 @@ import UIKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var restaurantImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
     var restaurant: Restaurant?
     
     override func viewDidLoad() {
@@ -17,6 +19,18 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         if let restaurant = self.restaurant {
             restaurantImageView.image = UIImage(named: restaurant.image)
         }
+        tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
+        tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
+        // REMOVE SEPERATOR FOR EMPTY ROWS
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
+        
+        navigationItem.title = self.restaurant?.name
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.hidesBarsOnSwipe = false
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,6 +57,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
             cell.fieldLabel.text = ""
             cell.valueLabel.text = ""
         }
+        cell.backgroundColor = UIColor.clear
         return cell
     }
     
