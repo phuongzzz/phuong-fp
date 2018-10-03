@@ -220,6 +220,9 @@
                                                 <state key="normal" title="Absolute love it">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="UHx-rf-ph9" kind="unwind" identifier="great" unwindAction="ratingButtonTappedWithSegue:" id="ILA-if-gjs"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEL-em-gfU">
                                                 <rect key="frame" x="0.0" y="41" width="253" height="36"/>
@@ -228,6 +231,9 @@
                                                 <state key="normal" title="Good">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="UHx-rf-ph9" kind="unwind" identifier="good" unwindAction="ratingButtonTappedWithSegue:" id="5VR-OT-7ys"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-SL-L2L">
                                                 <rect key="frame" x="0.0" y="82" width="253" height="36"/>
@@ -236,6 +242,9 @@
                                                 <state key="normal" title="I don't like it">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="UHx-rf-ph9" kind="unwind" identifier="dislike" unwindAction="ratingButtonTappedWithSegue:" id="mmZ-bv-FTQ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -250,7 +259,7 @@
                                         </constraints>
                                         <state key="normal" image="cross"/>
                                         <connections>
-                                            <segue destination="UHx-rf-ph9" kind="unwind" unwindAction="closeWithSegue:" id="xSP-RP-uVm"/>
+                                            <segue destination="UHx-rf-ph9" kind="unwind" unwindAction="closeWithSegue:" id="e74-HY-b6w"/>
                                         </connections>
                                     </button>
                                 </subviews>
