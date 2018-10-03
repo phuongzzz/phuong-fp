@@ -25,6 +25,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
         navigationItem.title = self.restaurant?.name
+        tableView.estimatedRowHeight = 36
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {

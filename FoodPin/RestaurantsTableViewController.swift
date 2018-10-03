@@ -11,39 +11,39 @@ import UIKit
 class RestaurantsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        setNeedsStatusBarAppearanceUpdate()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        return true
+//    }
     var restaurants: [Restaurant] = [
-        Restaurant(name: "Cafe Deadend", type: "Cafe", location: "Ha Noi", image: "cafedeadend.jpg", isVisited: false),
-        Restaurant(name: "Homei", type: "Bakery", location: "Paris", image: "homei.jpg", isVisited: true),
-        Restaurant(name: "Teakha", type: "Caferita", location: "Bankok", image: "teakha.jpg", isVisited: false),
-        Restaurant(name: "Cafe Loisl", type: "Cafe", location: "Sydney", image: "cafeloisl.jpg", isVisited: false),
-        Restaurant(name: "Petite Oyster", type: "Restaurant", location: "Lodon", image: "petiteoyster.jpg", isVisited: false),
-        Restaurant(name: "For Kee Restaurant", type: "Restaurant", location: "Munchen", image: "forkeerestaurant.jpg", isVisited: false),
-        Restaurant(name: "Po's Atelier", type: "Cafe", location: "Berlin", image: "posatelier.jpg", isVisited: false),
-        Restaurant(name: "Bourke Street Bakery", type: "Bakery", location: "Manchester", image: "bourkestreetbakery.jpg", isVisited: false),
-        Restaurant(name: "Haigh's Chocolate", type: "Chocolate", location: "Sofia", image: "haighschocolate.jpg", isVisited: false),
-        Restaurant(name: "Palomino Espresso", type: "Cafe", location: "Southamton", image: "palominoespresso.jpg", isVisited: false),
-        Restaurant(name: "Upstate", type: "Drinks", location: "Beijing", image: "upstate.jpg", isVisited: false),
-        Restaurant(name: "Traif", type: "Foods", location: "Moscow", image: "traif.jpg", isVisited: false),
-        Restaurant(name: "Graham Avenue Meats", type: "Meats", location: "Otawa", image: "grahamavenuemeats.jpg", isVisited: false),
-        Restaurant(name: "Waffle & Wolf", type: "Food", location: "Tokyo", image: "wafflewolf.jpg", isVisited: false),
-        Restaurant(name: "Five Leaves", type: "Drinks", location: "New York", image: "fiveleaves.jpg", isVisited: false),
-        Restaurant(name: "Cafe Lore", type: "Cafe", location: "San Diego", image: "cafelore.jpg", isVisited: false),
-        Restaurant(name: "Confessional", type: "Cafe", location: "Kingston", image: "confessional.jpg", isVisited: false),
-        Restaurant(name: "Barrafina", type: "Drinks", location: "Milan", image: "barrafina.jpg", isVisited: false),
-        Restaurant(name: "Donostia", type: "Chocolate", location: "Napoli", image: "donostia.jpg", isVisited: false),
-        Restaurant(name: "Royal Oak", type: "Drinks", location: "Java", image: "royaloak.jpg", isVisited: false),
-        Restaurant(name: "CASK Pub and Kitchen", type: "Pub", location: "Madrid", image: "caskpubkitchen.jpg", isVisited: false)
+        Restaurant(name: "Cafe Deadend", type: "Cafe", location: "A. P. Croll & Son 2299 Lewes-Georgetown Hwy, Georgetown, DE 19947", image: "cafedeadend.jpg", isVisited: false),
+        Restaurant(name: "Homei", type: "Bakery", location: "11522 Shawnee Road, Greenwood DE 19950", image: "homei.jpg", isVisited: true),
+        Restaurant(name: "Teakha", type: "Caferita", location: "144 Kings Highway, S.W. Dover, DE 19901", image: "teakha.jpg", isVisited: false),
+        Restaurant(name: "Cafe Loisl", type: "Cafe", location: "Intergrated Const. Services 2 Penns Way Suite 405 New Castle, DE 19720", image: "cafeloisl.jpg", isVisited: false),
+        Restaurant(name: "Petite Oyster", type: "Restaurant", location: "Humes Realty 33 Bridle Ridge Court, Lewes, DE 19958", image: "petiteoyster.jpg", isVisited: false),
+        Restaurant(name: "For Kee Restaurant", type: "Restaurant", location: "Nichols Excavation 2742 Pulaski Hwy Newark, DE 19711", image: "forkeerestaurant.jpg", isVisited: false),
+        Restaurant(name: "Po's Atelier", type: "Cafe", location: "2284 Bryn Zion Road, Smyrna, DE 19904", image: "posatelier.jpg", isVisited: false),
+        Restaurant(name: "Bourke Street Bakery", type: "Bakery", location: "VEI Dover Crossroads, LLC 1500 Serpentine Road, Suite 100 Baltimore MD 21", image: "bourkestreetbakery.jpg", isVisited: false),
+        Restaurant(name: "Haigh's Chocolate", type: "Chocolate", location: "580 North Dupont Highway Dover, DE 19901", image: "haighschocolate.jpg", isVisited: false),
+        Restaurant(name: "Palomino Espresso", type: "Cafe", location: "P.O. Box 778 Dover, DE 19903", image: "palominoespresso.jpg", isVisited: false),
+        Restaurant(name: "Upstate", type: "Drinks", location: "21 Manor Station Street Mchenry, IL 60050", image: "upstate.jpg", isVisited: false),
+        Restaurant(name: "Traif", type: "Foods", location: "9216 Mayfair Ave. Saint Joseph, MI 49085", image: "traif.jpg", isVisited: false),
+        Restaurant(name: "Graham Avenue Meats", type: "Meats", location: "739 County Rd. Statesville, NC 28625", image: "grahamavenuemeats.jpg", isVisited: false),
+        Restaurant(name: "Waffle & Wolf", type: "Food", location: "81 Branch Rd. Conyers, GA 30012", image: "wafflewolf.jpg", isVisited: false),
+        Restaurant(name: "Five Leaves", type: "Drinks", location: "1 Willow Circle Opa Locka, FL 33054", image: "fiveleaves.jpg", isVisited: false),
+        Restaurant(name: "Cafe Lore", type: "Cafe", location: "505 E. Homestead St. Rocky Mount, NC 27804", image: "cafelore.jpg", isVisited: false),
+        Restaurant(name: "Confessional", type: "Cafe", location: "9265 Surrey Road North Augusta, SC 29841", image: "confessional.jpg", isVisited: false),
+        Restaurant(name: "Barrafina", type: "Drinks", location: "41 Fairfield St. Madisonville, KY 42431", image: "barrafina.jpg", isVisited: false),
+        Restaurant(name: "Donostia", type: "Chocolate", location: "5 Boston Lane Hopkinsville, KY 42240", image: "donostia.jpg", isVisited: false),
+        Restaurant(name: "Royal Oak", type: "Drinks", location: "7 S. Johnson Street Midlothian, VA 23112", image: "royaloak.jpg", isVisited: false),
+        Restaurant(name: "CASK Pub and Kitchen", type: "Pub", location: "501 Virginia Ave. Winter Garden, FL 34787", image: "caskpubkitchen.jpg", isVisited: false)
     ]
     // MARK: - Table view data source
 
