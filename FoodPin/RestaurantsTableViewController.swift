@@ -12,6 +12,8 @@ class RestaurantsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -19,11 +21,8 @@ class RestaurantsTableViewController: UITableViewController {
         navigationController?.hidesBarsOnSwipe = true
     }
     
-//    override var prefersStatusBarHidden: Bool {
-//        return true
-//    }
     var restaurants: [Restaurant] = [
-        Restaurant(name: "Cafe Deadend", type: "Cafe", location: "A. P. Croll & Son 2299 Lewes-Georgetown Hwy, Georgetown, DE 19947", image: "cafedeadend.jpg", isVisited: false),
+        Restaurant(name: "Cafe Deadend", type: "Cafe", location: "A. P. Croll & Son 2299 Lewes-Georgetown Hwy, Georgetown, DE 19947 day la vi du cho mot dia chi rat la dai, rat la dai ban hieu khong? vi the nen hay lam cho no that la dai", image: "cafedeadend.jpg", isVisited: false),
         Restaurant(name: "Homei", type: "Bakery", location: "11522 Shawnee Road, Greenwood DE 19950", image: "homei.jpg", isVisited: true),
         Restaurant(name: "Teakha", type: "Caferita", location: "144 Kings Highway, S.W. Dover, DE 19901", image: "teakha.jpg", isVisited: false),
         Restaurant(name: "Cafe Loisl", type: "Cafe", location: "Intergrated Const. Services 2 Penns Way Suite 405 New Castle, DE 19720", image: "cafeloisl.jpg", isVisited: false),
