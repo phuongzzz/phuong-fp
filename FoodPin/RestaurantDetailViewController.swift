@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 class RestaurantDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var restaurantImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func close(segue: UIStoryboardSegue) {
-        
-    }
+    @IBOutlet weak var mapView: MKMapView!
     
+    @IBAction func close(segue: UIStoryboardSegue) { }
+
     @IBAction func ratingButtonTapped(segue: UIStoryboardSegue) {
         if let rating = segue.identifier {
             restaurant?.isVisited = true
@@ -42,18 +43,53 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         }
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
-        // REMOVE SEPERATOR FOR EMPTY ROWS
-        tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
+
         navigationItem.title = self.restaurant?.name
         tableView.estimatedRowHeight = 36
         tableView.rowHeight = UITableView.automaticDimension
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(showMap))
+        mapView.addGestureRecognizer(tapGestureRecognizer)
+        
+        
+        // CREATE GEOCODER OBJECT (TO FIND THE TEXTUAL LOCATION
+        let geoCoder = CLGeocoder()
+        
+        // PARSE THE ADDRESS STRING
+        geoCoder.geocodeAddressString(restaurant?.location ?? "viet nam", completionHandler: {
+            (placemarks, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            
+            if let placemarks = placemarks {
+                // GET THE FIRST PLACEMARK
+                let placemark = placemarks[0]
+                
+                let annotation = MKPointAnnotation()
+                if let location = placemark.location {
+                    annotation.coordinate = location.coordinate
+                    self.mapView.addAnnotation(annotation)
+                    
+                    // SET THE ZOOM LEVEL
+//                    let region = MKCoordinateRegionMakeWithDistance(annotation.coordinate, 250, 250)
+                    let region = MKCoordinateRegion(center: annotation.coordinate, latitudinalMeters: 250, longitudinalMeters: 250)
+                    self.mapView.setRegion(region, animated: true)
+                }
+            }
+            
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.hidesBarsOnSwipe = false
+    }
+    
+    @objc func showMap() {
+        performSegue(withIdentifier: "showMap", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -84,4 +120,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMap" {
+            let destinationController = segue.destination as! MapViewController
+            destinationController.restaurant = self.restaurant
+        }
+    }
 }
