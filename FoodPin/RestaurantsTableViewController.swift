@@ -162,6 +162,9 @@ class RestaurantsTableViewController: UITableViewController {
             }
         }
     }
+    
+    @IBAction func unwindToHomeScreen(segue: UIStoryboardSegue) {}
+    
 
     /*
     // Override to support rearranging the table view.

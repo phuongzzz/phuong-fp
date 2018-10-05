@@ -19,6 +19,7 @@
 		F380EBB7215FB3C50016216E /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */; };
 		F380EBB9215FBE5E0016216E /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F380EBB8215FBE5E0016216E /* RestaurantTableViewCell.swift */; };
 		F3C921252165151E0003BEAD /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C921242165151E0003BEAD /* ReviewViewController.swift */; };
+		F3F31B7B2167840C00AFF9D7 /* AddRestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3F31B7A2167840C00AFF9D7 /* AddRestaurantViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F380EBB6215FB3C50016216E /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
 		F380EBB8215FBE5E0016216E /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		F3C921242165151E0003BEAD /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		F3F31B7A2167840C00AFF9D7 /* AddRestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRestaurantViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				F342020421627BF100C864EA /* RestaurantDetailTableViewCell.swift */,
 				F3C921242165151E0003BEAD /* ReviewViewController.swift */,
 				F3171B442166586F005D2282 /* MapViewController.swift */,
+				F3F31B7A2167840C00AFF9D7 /* AddRestaurantViewController.swift */,
 			);
 			path = FoodPin;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				F3C921252165151E0003BEAD /* ReviewViewController.swift in Sources */,
 				F380EBB9215FBE5E0016216E /* RestaurantTableViewCell.swift in Sources */,
 				F342020521627BF100C864EA /* RestaurantDetailTableViewCell.swift in Sources */,
+				F3F31B7B2167840C00AFF9D7 /* AddRestaurantViewController.swift in Sources */,
 				F3584C0E216201F40084214E /* RestaurantDetailViewController.swift in Sources */,
 				F380EBA5215FB3410016216E /* AppDelegate.swift in Sources */,
 				F3171B452166586F005D2282 /* MapViewController.swift in Sources */,
